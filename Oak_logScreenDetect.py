@@ -6,7 +6,7 @@ from mss import mss
 from PIL import Image
 
 # Load the YOLOv7 model from Torch Hub
-model = torch.hub.load('WongKinYiu/yolov7', 'custom',  path_or_model='C:/Users/lolil/.cache/torch/hub/WongKinYiu_yolov7_main/runs/train/yolov7-custom32/weights/last.pt', force_reload=False)
+model = torch.hub.load('WongKinYiu/yolov7', 'custom',  path_or_model='', force_reload=False)
 
 # Set up the screen capture
 sct = mss()
