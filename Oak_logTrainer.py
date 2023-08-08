@@ -3,11 +3,11 @@ import subprocess
 import wandb
 
 # Change the working directory to yolov7-main
-yolov7_main_dir = "C:/Users/lolil/PycharmProjects/AA/yolov7-main"  # Replace this with the actual path to the yolov7-main directory
+yolov7_main_dir = ""  # Replace this with the actual path to the yolov7-main directory
 os.chdir(yolov7_main_dir)
 
 # Specify your wandb API key
-wandb_api_key = "6dd8884e673f03f64a58662198b6dee520df4217"
+wandb_api_key = ""
 
 try:
     # Log in to wandb with your API key
