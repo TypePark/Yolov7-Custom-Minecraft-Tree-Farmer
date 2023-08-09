@@ -9,9 +9,7 @@ import math
 import pyautogui
 
 # Load the YOLOv7 model from Torch Hub
-model = torch.hub.load('WongKinYiu/yolov7', 'custom',
-                       path_or_model='C:/Users/lolil/.cache/torch/hub/WongKinYiu_yolov7_main/runs/train/yolov7-custom32/weights/last.pt',
-                       force_reload=False)
+model = torch.hub.load('WongKinYiu/yolov7', 'custom',  path_or_model='', force_reload=False)
 
 # Set up the screen capture
 sct = mss()
@@ -32,7 +30,7 @@ button_press_duration = 0.3
 # Initialize variables for spacebar pressing
 spacebar_pressed = False
 spacebar_start_time = 0
-spacebar_duration = 1.0  # 2 seconds
+spacebar_duration = 1.0  
 
 while True:
     # Capture the screen frame
