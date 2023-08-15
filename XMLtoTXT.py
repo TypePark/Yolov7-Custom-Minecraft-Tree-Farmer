@@ -1,7 +1,7 @@
 import os
 import xml.etree.ElementTree as ET
 
-# Define the class mapping (replace 'Oak_log' with your actual class name)
+# Defines the class mapping (replace 'Oak_log' with your actual class name)
 class_mapping = {'Oak_log': 0}
 
 # Function to convert XML annotations to YOLO format
@@ -21,7 +21,7 @@ def convert_to_yolo(xml_content, target_width, target_height):
         xmax = float(bndbox.find('xmax').text)
         ymax = float(bndbox.find('ymax').text)
 
-        # Calculate bounding box center and width/height relative to image size
+        # Calculates bounding box center and width/height relative to image size
         x_center = (xmin + xmax) / (2 * target_width)
         y_center = (ymin + ymax) / (2 * target_height)
         width = (xmax - xmin) / target_width
@@ -37,7 +37,7 @@ xml_folder = "yolov7-main/Tree/Train/xmls"
 # Target size for YOLO format
 target_width, target_height = 1920, 1080
 
-# Loop through all XML files in the folder
+# Loops through all XML files in the folder
 for xml_file in os.listdir(xml_folder):
     if xml_file.endswith('.xml'):
         xml_path = os.path.join(xml_folder, xml_file)
@@ -48,14 +48,14 @@ for xml_file in os.listdir(xml_folder):
 
         print(f"Processing: {xml_file}")
 
-        # Convert XML to YOLO format
+        # Converts XML to YOLO format
         try:
             yolo_annotations = convert_to_yolo(xml_content, target_width, target_height)
         except Exception as e:
             print(f"Error processing {xml_file}: {e}")
             continue
 
-        # Write YOLO annotations to a text file
+        # Writes YOLO annotations to a text file
         txt_file = xml_file.replace('.xml', '.txt')
         txt_path = os.path.join(xml_folder, txt_file)
         with open(txt_path, 'w') as f:
